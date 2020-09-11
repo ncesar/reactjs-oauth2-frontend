@@ -28,8 +28,8 @@ const Homepage = ({ history }) => {
         setData(response.data.enterprises);
       })
       .catch(function () {
-        window.location.href = '/';
         localStorage.removeItem('authData');
+        window.location.href = '/';
       });
   }, []);
   const homepageContext = {
@@ -44,10 +44,14 @@ const Homepage = ({ history }) => {
         JSON.stringify(data).toLowerCase().indexOf(value.toLowerCase()) !== -1,
     );
   };
+  const exitHandler = () => {
+    localStorage.removeItem('authData');
+    window.location.href = '/';
+  };
 
   return (
     <HomepageContext.Provider value={homepageContext}>
-      <TopBar />
+      <TopBar onExitClick={exitHandler} />
       <StyledHomepageWrapper adjustHeight={searchClicked && true}>
         {!searchClicked ? (
           <Title size="2rem">Clique na busca para iniciar.</Title>

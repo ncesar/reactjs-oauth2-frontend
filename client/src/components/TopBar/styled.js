@@ -7,8 +7,9 @@ export const StyledTopBarWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  .search-icon {
-    margin-right: 2.5rem;
+  .search-icon,
+  .exit-icon {
+    margin-right: 2rem;
     width: 2.75rem;
     height: 2.75rem;
     color: var(--color-bg);

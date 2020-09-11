@@ -1,12 +1,13 @@
 import React, { useState, useContext } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { StyledTopBarWrapper, StyledLogoWrapper } from './styled';
 import { Logo } from '../Logo';
 import { SearchBar } from '../SearchBar';
 import { HomepageContext } from '../../layout/Homepage/HomepageContext';
 
 export const TopBar = (props) => {
-  const { onSearchClick, ...other } = props;
+  const { onExitClick, ...other } = props;
   const [expanded, setExpanded] = useState(false);
   const { setSearchClicked, searchedValue, setSearchedValue } = useContext(
     HomepageContext,
@@ -27,6 +28,7 @@ export const TopBar = (props) => {
             <Logo white />
           </StyledLogoWrapper>
           <SearchIcon onClick={searchIconHandler} className="search-icon" />
+          <ExitToAppIcon onClick={onExitClick} className="exit-icon" />
         </React.Fragment>
       ) : (
         <SearchBar
