@@ -1,9 +1,15 @@
 import React from 'react';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 import { render } from '@testing-library/react';
-import App from './App';
+import Login from './layout/Login';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders react router', () => {
+  const history = createMemoryHistory();
+  const { container } = render(
+    <Router history={history}>
+      <Login />
+    </Router>,
+  );
+  expect(container).toHaveTextContent('BEM-VINDO AO EMPRESAS');
 });

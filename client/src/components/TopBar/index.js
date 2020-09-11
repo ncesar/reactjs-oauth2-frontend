@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
+import SearchIcon from '@material-ui/icons/Search';
 import { StyledTopBarWrapper, StyledLogoWrapper } from './styled';
 import { Logo } from '../Logo';
-import SearchIcon from '@material-ui/icons/Search';
 import { SearchBar } from '../SearchBar';
 import { HomepageContext } from '../../layout/Homepage/HomepageContext';
 
@@ -11,7 +11,6 @@ export const TopBar = (props) => {
   const { setSearchClicked, searchedValue, setSearchedValue } = useContext(
     HomepageContext,
   );
-
   const searchIconHandler = () => {
     setSearchClicked(true);
     setExpanded(true);
@@ -19,6 +18,7 @@ export const TopBar = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
   };
+
   return (
     <StyledTopBarWrapper {...other}>
       {!expanded ? (

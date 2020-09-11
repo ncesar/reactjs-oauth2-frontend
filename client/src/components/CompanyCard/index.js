@@ -1,34 +1,45 @@
 import React from 'react';
 import {
   StyledCompanyWrapper,
-  StyledInitial,
   StyledCompanyInitial,
   StyledInformationWrapper,
+  StyledTitle,
+  StyledInformationTitle,
 } from './styled';
-import { Title } from '../../components/Title';
 
 export const CompanyCard = (props) => {
-  const { initial, name, category, country, ...other } = props;
+  const { initial, name, category, country, photo, ...other } = props;
   return (
     <StyledCompanyWrapper {...other}>
-      <StyledCompanyInitial>
-        <StyledInitial>{initial}</StyledInitial>
+      <StyledCompanyInitial bgImage={photo}>
+        <StyledTitle
+          color="#fff"
+          size="4rem"
+          style={{ textTransform: 'uppercase', textShadow: '2px 2px black' }}
+        >
+          {initial}
+        </StyledTitle>
       </StyledCompanyInitial>
       <StyledInformationWrapper>
-        <Title
+        <StyledInformationTitle
           size="1.875rem"
           weight="bold"
           margin="0 0 0.064rem 0"
           color="#1a0e49"
+          align="left"
         >
           {name}
-        </Title>
-        <Title size="1.5rem" margin="0 0 0.25rem 0" color="#8d8c8c">
+        </StyledInformationTitle>
+        <StyledInformationTitle
+          size="1.5rem"
+          margin="0 0 0.25rem 0"
+          color="#8d8c8c"
+        >
           {category}
-        </Title>
-        <Title size="1.5rem" color="#8d8c8c" margin="0">
+        </StyledInformationTitle>
+        <StyledInformationTitle size="1.5rem" color="#8d8c8c" margin="0">
           {country}
-        </Title>
+        </StyledInformationTitle>
       </StyledInformationWrapper>
     </StyledCompanyWrapper>
   );

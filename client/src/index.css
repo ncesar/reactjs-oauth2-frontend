@@ -47,3 +47,15 @@ body {
   background: #ebe9d7 !important;
   position: relative;
 }
+:root {
+  --color-black: black;
+  --color-bg: #fff;
+  --color-bg-company: #7dc075;
+  --color-bg-transparent: rgba(255, 255, 255, 0.6);
+  --color-loading: #57bbbc;
+  --color-placeholder: #991237;
+  --color-error: #ff0f44;
+  --color-input: #403e4d;
+  --color-title: #383743;
+  --color-topbar-gradient: linear-gradient(180deg, #ee4c77 34%, #0d0430 200%);
+}

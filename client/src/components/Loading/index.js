@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyledLoadingWrapper } from './styled';
 
-export const Loading = () => {
+export const Loading = (props) => {
   return (
-    <StyledLoadingWrapper>
+    <StyledLoadingWrapper {...props}>
       <svg
         version="1.1"
         id="L9"

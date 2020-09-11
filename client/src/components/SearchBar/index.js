@@ -27,7 +27,7 @@ export const SearchBar = (props) => {
           {...other}
           InputProps={{
             endAdornment: (
-              <InputAdornment position="end">
+              <InputAdornment position="end" className="icon-button">
                 <IconButton
                   aria-label="toggle searchbar"
                   onClick={iconButtonHandler}

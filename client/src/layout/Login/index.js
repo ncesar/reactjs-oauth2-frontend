@@ -36,7 +36,6 @@ const Login = () => {
       */
     })
       .then(function (response) {
-        console.log(response, ' sucesso');
         const authData = {
           accessToken: response.headers['access-token'],
           client: response.headers.client,
@@ -53,7 +52,6 @@ const Login = () => {
       .catch(function (error) {
         setLoading(false);
         setError(true);
-        console.log(error, 'error');
       });
   };
   if (localStorage.getItem('authData')) {
@@ -75,7 +73,6 @@ const Login = () => {
     },
     {
       autoComplete: 'current-password',
-      autoFocus: true,
       name: 'password',
       required: true,
       fullWidth: true,
@@ -111,7 +108,12 @@ const Login = () => {
             </StyledErrorMessage>
           )}
           <StyledButtonWrapper>
-            <StyledButton type="submit" variant="contained" color="primary">
+            <StyledButton
+              type="submit"
+              variant="contained"
+              color="primary"
+              error={error.toString()}
+            >
               Entrar
             </StyledButton>
           </StyledButtonWrapper>

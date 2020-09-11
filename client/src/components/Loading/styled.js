@@ -11,13 +11,13 @@ export const StyledLoadingWrapper = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--color-bg-transparent);
   svg {
     position: absolute;
     width: 40%;
     height: 40%;
     path {
-      fill: #57bbbc;
+      fill: var(--color-bg-loading);
     }
   }
 `;

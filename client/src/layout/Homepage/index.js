@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 import { TopBar } from '../../components/TopBar';
-import { StyledHomepageWrapper } from './styled';
 import { Title } from '../../components/Title';
-import { HomepageContext } from './HomepageContext';
 import { CompanyCard } from '../../components/CompanyCard';
+import { HomepageContext } from './HomepageContext';
+import { StyledHomepageWrapper } from './styled';
 
-const Homepage = () => {
+const Homepage = ({ history }) => {
   const [data, setData] = useState([]);
   const [searchClicked, setSearchClicked] = useState(false);
   const [searchedValue, setSearchedValue] = useState('');
 
-  // this is probably going to /search route
   useEffect(() => {
     const authData = JSON.parse(localStorage.getItem('authData'));
     axios({
@@ -26,9 +26,8 @@ const Homepage = () => {
     })
       .then(function (response) {
         setData(response.data.enterprises);
-        console.log(response);
       })
-      .catch(function (error) {
+      .catch(function () {
         window.location.href = '/';
         localStorage.removeItem('authData');
       });
@@ -39,12 +38,13 @@ const Homepage = () => {
     searchedValue,
     setSearchedValue,
   };
-  function filterByValue(array, value) {
+  const filterByValue = (array, value) => {
     return array.filter(
       (data) =>
         JSON.stringify(data).toLowerCase().indexOf(value.toLowerCase()) !== -1,
     );
-  }
+  };
+
   return (
     <HomepageContext.Provider value={homepageContext}>
       <TopBar />
@@ -58,11 +58,15 @@ const Homepage = () => {
               company.enterprise_name.slice(-1);
             return (
               <CompanyCard
-                key={`${company.enterprise_name}_${index}`}
+                key={`${company.id}_${index}`}
                 initial={initial}
                 name={company.enterprise_name}
                 category={company.enterprise_type.enterprise_type_name}
                 country={company.country}
+                photo={company.photo}
+                onClick={() =>
+                  history.push(`/search/${company.id}`, { company })
+                }
               />
             );
           })
@@ -76,4 +80,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default withRouter(Homepage);

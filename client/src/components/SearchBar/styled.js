@@ -9,27 +9,25 @@ export const StyledFieldWrapper = styled.div`
   padding: 0 20px;
 
   .MuiInput-underline:after {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--color-bg);
   }
   input {
     padding-left: 60px;
-    font-size: 2.125rem;
-    color: #fff;
+    font-size: 1.5rem;
+    color: var(--color-bg);
     ::-webkit-input-placeholder {
       /* Edge */
-      color: #991237;
+      color: var(--color-placeholder);
     }
-
     :-ms-input-placeholder {
       /* Internet Explorer 10-11 */
-      color: #991237;
+      color: var(--color-placeholder);
     }
-
     ::placeholder {
-      color: #991237;
+      color: var(--color-placeholder);
     }
   }
   svg {
-    fill: #fff;
+    fill: var(--color-bg);
   }
 `;

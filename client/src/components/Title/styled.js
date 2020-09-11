@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const StyledTitle = styled.h2`
   text-align: center;
-  color: #383743;
+  color: var(--color-title);
   ${(props) =>
     props.size &&
     css`
@@ -22,5 +22,10 @@ export const StyledTitle = styled.h2`
     props.color &&
     css`
       color: ${props.color};
+    `}
+  ${(props) =>
+    props.align &&
+    css`
+      text-align: ${props.align};
     `}
 `;

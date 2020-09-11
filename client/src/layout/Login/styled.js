@@ -25,7 +25,7 @@ export const StyledButtonWrapper = styled.div`
   justify-content: center;
 `;
 export const StyledButton = styled(Button)`
-  background: #57bbbc;
+  background: var(--color-loading);
   width: 20.25rem;
   height: 3.3rem;
   margin: 40px 0 0;
@@ -39,7 +39,7 @@ export const StyledButton = styled(Button)`
     `}
 `;
 export const StyledErrorMessage = styled.span`
-  color: #ff0f44;
+  color: var(--color-error);
   font-size: 0.76rem;
   display: flex;
   justify-content: center;

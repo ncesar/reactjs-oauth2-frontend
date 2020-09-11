@@ -1,22 +1,23 @@
 import styled, { css } from 'styled-components';
-import { Title } from '../Title';
 
 export const StyledCompanyWrapper = styled.article`
   width: 80%;
-  height: 13.366rem;
-  border-radius: 4.7px;
   background: var(--color-bg);
   display: flex;
-  cursor: pointer;
-  margin-bottom: 20px;
+  flex-direction: column;
+  padding: 3rem 4.688rem;
+  border-radius: 4.8px;
+  margin-top: 2.75rem;
+  @media (max-width: 576px) {
+    padding: 1rem 2rem;
+  }
 `;
 export const StyledCompanyInitial = styled.div`
-  background: #7dc075;
-  margin: 1.688rem 2.461rem 1.194rem 1.194rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  background: var(--color-bg-company);
+  width: 100%;
   ${(props) =>
     props.bgImage &&
     css`
@@ -26,22 +27,11 @@ export const StyledCompanyInitial = styled.div`
       background-position: center;
     `}
 `;
-export const StyledInformationWrapper = styled.div`
+export const StyledCompanyDetails = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-top: 3.125rem;
-  width: 100%;
+  flex-direction: row;
   align-items: baseline;
-`;
-export const StyledTitle = styled(Title)`
-  text-transform: uppercase;
-  text-shadow: 2px 2px var(--color-black);
   @media (max-width: 576px) {
-    font-size: 20px;
-  }
-`;
-export const StyledInformationTitle = styled(Title)`
-  @media (max-width: 576px) {
-    font-size: 19px;
+    flex-direction: column;
   }
 `;

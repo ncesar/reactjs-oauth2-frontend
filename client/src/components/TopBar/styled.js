@@ -11,8 +11,11 @@ export const StyledTopBarWrapper = styled.header`
     margin-right: 2.5rem;
     width: 2.75rem;
     height: 2.75rem;
-    color: #fff;
+    color: var(--color-bg);
     cursor: pointer;
+    @media (max-width: 576px) {
+      margin-right: 3px;
+    }
   }
   .secondary-search-icon {
     position: absolute;
@@ -20,7 +23,7 @@ export const StyledTopBarWrapper = styled.header`
     left: 25px;
     width: 2.75rem;
     height: 2.75rem;
-    color: #fff;
+    color: var(--color-bg);
     cursor: pointer;
     z-index: 1;
   }
