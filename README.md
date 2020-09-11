@@ -7,6 +7,8 @@ This is a simple ReactJS project made with the current functionalities:
 3. Context API
 4. React Router DOM
 
-I had an external backend with OAuth 2.0 working and I had to make a login fucntion and also only show api items if the user was authenticated.
+I had an external backend with OAuth 2.0 working and I had to make a login handler and also only show api items if the user was authenticated.
 
-See live at:
+See live at: https://ioasys.ncesar.com
+
+Since this API is not hosted by me, it can be offline by the time you enter here to take a look but the code is always here so go check it out :)
