@@ -21,10 +21,10 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'ioasys Empresas', // Title for your website.
+  title: 'ioasys-Empresas', // Title for your website.
   tagline: 'A fast and simple documentation',
-  url: 'https://ioasys.ncesar.com', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  url: 'https://ncesar.github.io', // Your website URL
+  baseUrl: '/ioasys/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',

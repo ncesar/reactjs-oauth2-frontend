@@ -12,3 +12,5 @@ I had an external backend with OAuth 2.0 working and I had to make a login handl
 See live at: https://ioasys.ncesar.com
 
 Since this API is not hosted by me, it can be offline by the time you enter here to take a look but the code is always here so go check it out :)
+
+Check the documentation at: https://ncesar.github.io/ioasys
